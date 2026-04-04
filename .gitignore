@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+.env
+build_output.txt
+.snapshots
+.gemini
+package-lock.json
