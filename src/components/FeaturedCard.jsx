@@ -11,7 +11,7 @@ const FeaturedCard = () => {
           <div className="section-label">Featured</div>
           <h2 className="section-title">Special Announcement</h2>
           <div className="featured-card__image-container">
-            <img src="/card.jpeg" alt="Featured card" className="featured-card__img" />
+            <img src={`${import.meta.env.BASE_URL}card.jpeg`} alt="Featured card" className="featured-card__img" />
           </div>
         </div>
       </div>

@@ -14,9 +14,9 @@ export const properties = [
     sqft: 800,
     tags: ['2 Floor', '20×40 Plot'],
     tags_hi: ['2 मंजिल', '20×40 प्लॉट'],
-    image: '/plot1.jpeg',
+    image: `${import.meta.env.BASE_URL}plot1.jpeg`,
     images: [
-      '/plot1.jpeg'
+      `${import.meta.env.BASE_URL}plot1.jpeg`
     ],
     description: {
       en: 'Well-built 2-floor residential house on a 20×40 plot in Swatantra Nagar, Ujjain. Ideal for families looking for a ready-to-move home.',

@@ -34,7 +34,7 @@ const Owner = () => {
           <div className="owner__photo-wrapper">
             <div className="owner__photo-ring"></div>
             <img
-              src="me.jpeg"
+              src={`${import.meta.env.BASE_URL}me.jpeg`}
               alt={t('owner.name')}
               className="owner__photo"
             />
