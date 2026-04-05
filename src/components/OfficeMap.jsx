@@ -26,10 +26,10 @@ const OfficeMap = () => {
   }, []);
 
   const mapEmbedUrl =
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d78.808167!3d26.564056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDMzJzUwLjYiTiA3OMKwNDgnMjkuNCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin';
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.613038123906!2d78.8035677!3d26.5646965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39767ac260200c81%3A0x28dcd094277e4a7f!2sMayur+Shiksha+Academy!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin';
 
   const directionsUrl =
-    'https://www.google.com/maps/dir/?api=1&destination=26.564056,78.808167';
+    'https://maps.app.goo.gl/JzwhcvtnGcu57a8TA';
 
   return (
     <section className="office-map" ref={sectionRef}>
