@@ -8,6 +8,8 @@ import HowItWorks from '../components/HowItWorks';
 import PostPropertyCTA from '../components/PostPropertyCTA';
 import Testimonials from '../components/Testimonials';
 
+import OfficeMap from '../components/OfficeMap';
+
 const Home = () => {
   return (
     <PageTransition>
@@ -15,6 +17,7 @@ const Home = () => {
       <Stats />
       <FeaturedCard />
       <PostPropertyCTA />
+      <OfficeMap />
     </PageTransition>
   );
 };
