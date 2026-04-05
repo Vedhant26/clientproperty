@@ -64,8 +64,8 @@ const OfficeMap = () => {
                 </div>
                 <div className="office-map__value">
                   {language === 'hi'
-                    ? 'महाकाल प्रॉपर्टी डीलर, उज्जैन, मध्य प्रदेश'
-                    : 'Mahakal Property Dealer, Ujjain, Madhya Pradesh'}
+                    ? 'महाकाल प्रॉपर्टी डीलर, भिंड, मध्य प्रदेश'
+                    : 'Mahakal Property Dealer, Bhind, Madhya Pradesh'}
                 </div>
               </div>
             </div>
