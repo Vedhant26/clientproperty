@@ -174,6 +174,28 @@ const PropertyDetailsPage = () => {
                 💬 {t('prop.whatsapp')}
               </a>
             </div>
+            <a
+              href="https://www.instagram.com/mahakal_properties_bhind/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                padding: '0.7rem',
+                background: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
+                borderRadius: '8px',
+                color: '#fff',
+                fontSize: '0.85rem',
+                fontWeight: '600',
+                marginTop: '0.75rem',
+                transition: 'all 0.3s',
+                textDecoration: 'none',
+              }}
+            >
+              📸 Instagram — @mahakal_properties_bhind
+            </a>
           </div>
         </div>
       </div>

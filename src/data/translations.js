@@ -92,10 +92,10 @@ export const translations = {
 
     // Owner Profile
     'owner.name': 'Shivam Tomar',
-    'owner.role': 'Founder, Mahakal Property Dealer',
+    'owner.role': 'Founder of Mahakal Properties',
     'owner.desc': 'With over a decade of experience in the Madhya Pradesh real estate market, I believe in building relationships rather than just closing deals. Our mission is to provide 100% transparent, hassle-free, and profitable property transactions for every client.',
-    'owner.phone': '+91 98765 43210',
-    'owner.email': 'info@mahakalproperty.com',
+    'owner.phone': '+91 84355 23004',
+    'owner.email': 'vasutomar144@gmail.com',
 
     // Contact
     'contact.title': 'Get In Touch',
@@ -221,8 +221,8 @@ export const translations = {
     'owner.name': 'वेदांत (Shivam Tomar)',
     'owner.role': 'संस्थापक, महाकाल प्रॉपर्टी डीलर',
     'owner.desc': 'मध्य प्रदेश रियल एस्टेट बाजार में एक दशक से अधिक के अनुभव के साथ, मैं केवल डील फाइनल करने की बजाय रिश्ते बनाने में विश्वास करता हूं। हमारा मिशन हर ग्राहक के लिए 100% पारदर्शी, परेशानी मुक्त और लाभदायक प्रॉपर्टी लेनदेन प्रदान करना है।',
-    'owner.phone': '+91 98765 43210',
-    'owner.email': 'info@mahakalproperty.com',
+    'owner.phone': '+91 84355 23004',
+    'owner.email': 'vasutomar144@gmail.com',
 
     // Contact
     'contact.title': 'हमसे संपर्क करें',

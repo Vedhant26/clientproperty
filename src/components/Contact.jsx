@@ -76,7 +76,7 @@ const Contact = () => {
               <div className="contact__info-icon">📞</div>
               <div>
                 <div className="contact__info-label">Phone</div>
-                <div className="contact__info-value">+91 98765 43210</div>
+                <div className="contact__info-value">+91 84355 23004</div>
               </div>
             </a>
             <a
@@ -91,11 +91,23 @@ const Contact = () => {
                 <div className="contact__info-value">Chat with us</div>
               </div>
             </a>
-            <a href="mailto:info@mahakalproperty.com" className="contact__info-card">
+            <a href="mailto:vasutomar144@gmail.com" className="contact__info-card">
               <div className="contact__info-icon">✉️</div>
               <div>
                 <div className="contact__info-label">Email</div>
-                <div className="contact__info-value">info@mahakalproperty.com</div>
+                <div className="contact__info-value">vasutomar144@gmail.com</div>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/mahakal_properties_bhind/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact__info-card"
+            >
+              <div className="contact__info-icon" style={{ color: '#E1306C' }}>📸</div>
+              <div>
+                <div className="contact__info-label">Instagram</div>
+                <div className="contact__info-value">@mahakal_properties_bhind</div>
               </div>
             </a>
             <div className="contact__info-card">

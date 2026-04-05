@@ -75,6 +75,18 @@ const Owner = () => {
                   <div className="owner__contact-value">{t('owner.email')}</div>
                 </div>
               </a>
+              <a
+                href="https://www.instagram.com/mahakal_properties_bhind/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="owner__contact-item"
+              >
+                <span className="owner__contact-icon">📸</span>
+                <div>
+                  <div className="owner__contact-label">Instagram</div>
+                  <div className="owner__contact-value">@mahakal_properties_bhind</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>

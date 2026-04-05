@@ -95,6 +95,20 @@ const OfficeMap = () => {
             </div>
 
             <a
+              href="https://www.instagram.com/mahakal_properties_bhind/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="office-map__info-row"
+              style={{ textDecoration: 'none' }}
+            >
+              <span className="office-map__icon">📸</span>
+              <div>
+                <div className="office-map__label">Instagram</div>
+                <div className="office-map__value">@mahakal_properties_bhind</div>
+              </div>
+            </a>
+
+            <a
               href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"

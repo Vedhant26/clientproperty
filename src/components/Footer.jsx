@@ -30,9 +30,8 @@ const Footer = () => {
              <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>{t('owner.phone')}</p>
              <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>{t('owner.email')}</p>
              <div className="footer__social">
-                <a href="#" aria-label="Facebook">FB</a>
-                <a href="#" aria-label="Instagram">IG</a>
-                <a href="#" aria-label="Twitter">TW</a>
+                <a href="https://www.instagram.com/mahakal_properties_bhind/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+                <a href="https://wa.me/918435523004" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
               </div>
           </div>
           
