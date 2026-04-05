@@ -114,7 +114,7 @@ const Contact = () => {
               <div className="contact__info-icon">📍</div>
               <div>
                 <div className="contact__info-label">Office</div>
-                <div className="contact__info-value">Ujjain, Madhya Pradesh</div>
+                <div className="contact__info-value">Bhind, Madhya Pradesh</div>
               </div>
             </div>
           </div>
