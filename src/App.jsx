@@ -79,9 +79,9 @@ function App() {
   if (loading) {
     return (
       <div className="loader">
-        <div className="loader__logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <span style={{ fontFamily: "'Playfair Display', serif", color: '#d4a853', fontSize: '1.2em' }}>MP</span>
-          <span style={{ fontSize: '0.4em', marginTop: '5px' }}>👑🔱</span>
+        <div className="loader__logo">
+          <span className="loader__text">MP</span>
+          <span className="loader__emoji">👑🔱</span>
         </div>
         <div className="loader__bar-track">
           <div className="loader__bar"></div>

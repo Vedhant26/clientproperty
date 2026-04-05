@@ -2127,17 +2127,28 @@ html.lenis body {
 }
 
 .loader__logo {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
-  border-radius: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--dark-900);
   font-family: var(--font-display);
+}
+
+.loader__text {
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--gold-200), var(--gold-400), var(--gold-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(212, 168, 83, 0.6)) drop-shadow(0 0 40px rgba(212, 168, 83, 0.3));
+}
+
+.loader__emoji {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-top: 0.5rem;
+  filter: drop-shadow(0 0 20px rgba(212, 168, 83, 0.5));
 }
 
 .loader__bar-track {
