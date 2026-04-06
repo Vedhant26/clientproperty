@@ -134,6 +134,23 @@ const PropertyDetailsPage = () => {
             </div>
           )}
 
+          {/* Video Note */}
+          {property.videoNote && (
+            <div className="pd-section pd-video-section">
+              <h3 className="pd-subtitle">🎬 Plot Video</h3>
+              <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(212, 168, 83, 0.15)' }}>
+                <video 
+                  controls 
+                  src={property.videoNote} 
+                  preload="metadata" 
+                  style={{ width: '100%', borderRadius: '8px', background: '#000', display: 'block' }} 
+                >
+                  Your browser does not support the video element.
+                </video>
+              </div>
+            </div>
+          )}
+
           <div className="pd-section">
             <h3 className="pd-subtitle">Description</h3>
             <p className="pd-desc">{propDesc}</p>

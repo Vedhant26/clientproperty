@@ -157,6 +157,25 @@ const Properties = () => {
                     />
                   </div>
                 )}
+
+                {/* Video Note Player */}
+                {property.videoNote && (
+                  <div 
+                    className="property-card__video"
+                    onClick={(e) => e.stopPropagation()} // Prevent card click navigation
+                    style={{ marginTop: '0.75rem' }}
+                  >
+                    <div style={{ fontSize: '0.7rem', color: 'var(--gold-400)', marginBottom: '4px', fontWeight: '500' }}>
+                      🎬 Plot Video
+                    </div>
+                    <video 
+                      controls 
+                      src={property.videoNote} 
+                      preload="none" 
+                      style={{ width: '100%', borderRadius: '8px', background: '#000' }} 
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

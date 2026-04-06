@@ -127,5 +127,49 @@ export const properties = [
         { name: 'सिद्धिविनायक कॉलेज', distance: 'पास', category: 'शिक्षा' }
       ]
     }
+  },
+  {
+    id: 4,
+    name: {
+      en: 'All Size Plots - Vivekanand Colony',
+      hi: 'सभी आकार के प्लॉट - विवेकानंद कॉलोनी'
+    },
+    price: '₹ 900 / sq.ft',
+    location: 'Vivekanand Colony, Kumrauha',
+    address: 'Vivekanand Colony, Kumrauha\nAll Size Plots Available\nPrime Location Nearby Market\n800m from No.2 School\nRate: ₹ 900 per sq.ft',
+    type: 'plot',
+    status: 'buy',
+    category: 'lands_plots',
+    beds: null,
+    baths: null,
+    sqft: 'Custom Sizes',
+    tags: ['Prime Location', 'Near Market', '₹ 900/sqft'],
+    tags_hi: ['प्राइम लोकेशन', 'बाजार के पास', '₹ 900/वर्ग फुट'],
+    videoNote: `${import.meta.env.BASE_URL}plot%20sale%202/video.mp4`,
+    image: `${import.meta.env.BASE_URL}plot%20sale%202/Screenshot%202026-04-06%20235013.png`,
+    images: [
+      `${import.meta.env.BASE_URL}plot%20sale%202/Screenshot%202026-04-06%20235013.png`,
+      `${import.meta.env.BASE_URL}plot%20sale%202/Screenshot%202026-04-06%20235029.png`
+    ],
+    description: {
+      en: 'Various sized plots available in the highly sought-after Vivekanand Colony, Kumrauha. This is a prime location situated very close to the local market and just 800 meters distance from No.2 School. Offered at a very competitive final rate of 900 rs per sq.ft.',
+      hi: 'विवेकानंद कॉलोनी, कुमरौहा में सभी आकार के प्लॉट उपलब्ध। यह एक प्राइम लोकेशन है जो बाजार के करीब और नंबर 2 स्कूल से केवल 800 मीटर की दूरी पर है। मात्र 900 रुपये प्रति वर्ग फुट के आकर्षक रेट पर।'
+    },
+    amenities: {
+      en: ['Custom Sizes', 'Prime Location', 'Near Market', 'Near School'],
+      hi: ['कस्टम आकार', 'प्राइम लोकेशन', 'बाजार के पास', 'स्कूल के पास']
+    },
+    mapUrl: null,
+    adminMapUrl: null,
+    nearby: {
+      en: [
+        { name: 'No.2 School', distance: '800 m', category: 'Education' },
+        { name: 'Local Market', distance: 'Nearby', category: 'Shopping' }
+      ],
+      hi: [
+        { name: 'नंबर 2 स्कूल', distance: '800 मीटर', category: 'शिक्षा' },
+        { name: 'स्थानीय बाज़ार', distance: 'पास', category: 'बाज़ार' }
+      ]
+    }
   }
 ];
