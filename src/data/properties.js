@@ -9,6 +9,7 @@ export const properties = [
     location: 'Swatantra Nagar, Bhind',
     type: 'house',
     status: 'buy',
+    category: 'sale_residential',
     beds: 6,
     baths: 2,
     sqft: 800,
@@ -52,6 +53,7 @@ export const properties = [
     address: '20 by 40, Full Furnished, Best VIP House\nWith Talghar\nLocation – Remjapura Kumrauha\n22 ft Road\nRate: ₹35 Lakh',
     type: 'house',
     status: 'buy',
+    category: 'sale_residential',
     beds: 3,
     baths: 2,
     sqft: 800,
@@ -82,6 +84,47 @@ export const properties = [
         { name: 'तलघर बाजार', distance: '0.5 किमी', category: 'बाजार' },
         { name: 'स्थानीय स्कूल', distance: '0.8 किमी', category: 'शिक्षा' },
         { name: 'सामुदायिक अस्पताल', distance: '1.2 किमी', category: 'मेडिकल' }
+      ]
+    }
+  },
+  {
+    id: 3,
+    name: {
+      en: '2 Bigha Plot - 100 Front',
+      hi: '2 बीघा जमीन - 100 फ्रंट'
+    },
+    price: '1.10 / Bigha',
+    location: 'Barakalan (Near Siddhi Vinayak College)',
+    address: 'Near Siddhi Vinayak College, Barakalan\n2 Bigha Land\n100 Front\nTime: 4 Months\nFinal Rate: 1.10 per Bigha',
+    type: 'plot',
+    status: 'buy',
+    category: 'lands_plots',
+    beds: null,
+    baths: null,
+    sqft: '2 Bigha',
+    tags: ['2 Bigha', '100 Front', '4 Months Time'],
+    tags_hi: ['2 बीघा', '100 फ्रंट', '4 महीने का समय'],
+    voiceNote: `${import.meta.env.BASE_URL}plot%20for%20sale/voice.ogg`,
+    image: `${import.meta.env.BASE_URL}plot%20for%20sale/image.png`,
+    images: [
+      `${import.meta.env.BASE_URL}plot%20for%20sale/image.png`
+    ],
+    description: {
+      en: 'Premium 2 Bigha land available for sale near Siddhi Vinayak College in Barakalan. The plot features an excellent 100 wide front. Offered at a final rate of 1.10 per Bigha, with a comfortable payment time of 4 months allowed.',
+      hi: 'सिद्धिविनायक कॉलेज, बरकलां के पास 2 बीघा बेहतरीन जमीन बिकाऊ। शानदार 100 फ्रंट के साथ। 1.10 प्रति बीघा के बहुत ही उचित मूल्य पर, जिसमें भुगतान के लिए 4 महीने का समय भी दिया गया है।'
+    },
+    amenities: {
+      en: ['100 Front', '2 Bigha Area', 'Investment Opportunity', 'Clear Title'],
+      hi: ['100 फ्रंट', '2 बीघा क्षेत्रफल', 'निवेश का अवसर', 'क्लियर टाइटल']
+    },
+    mapUrl: null,
+    adminMapUrl: null,
+    nearby: {
+      en: [
+        { name: 'Siddhi Vinayak College', distance: 'Near', category: 'Education' }
+      ],
+      hi: [
+        { name: 'सिद्धिविनायक कॉलेज', distance: 'पास', category: 'शिक्षा' }
       ]
     }
   }

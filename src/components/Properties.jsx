@@ -40,11 +40,20 @@ const Properties = () => {
   const navigate = useNavigate();
   const { t, language } = useTranslation();
 
-  const filterOptions = ['all', 'buy', 'rent'];
+  const filterOptions = [
+    'all',
+    'sale_residential',
+    'rent_residential',
+    'new_projects',
+    'lands_plots',
+    'rent_commercial',
+    'sale_commercial',
+    'pg_guest'
+  ];
 
   const filtered = activeFilter === 'all'
     ? properties
-    : properties.filter((p) => p.status === activeFilter);
+    : properties.filter((p) => p.category === activeFilter);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -73,25 +82,28 @@ const Properties = () => {
         { opacity: 1, y: 0, scale: 1, duration: 0.4, stagger: 0.06, ease: 'power3.out' }
       );
     }
-  }, [activeFilter]);
+  }, [activeFilter, filtered.length]); // Added filtered.length to trigger animation on length change
 
   return (
     <section className="properties" id="properties" ref={sectionRef}>
       <div className="container">
         <div className="properties__header">
-          <div className="section-label">{t('section.explore')}</div>
-          <h2 className="section-title">{t('section.featured')}</h2>
+          <div className="section-label">{t('section.explore') || 'Explore'}</div>
+          <h2 className="section-title">{t('section.properties_main')}</h2>
 
-          <div className="properties__filters">
-            {filterOptions.map((opt) => (
-              <button
-                key={opt}
-                className={`filter-btn ${activeFilter === opt ? 'active' : ''}`}
-                onClick={() => setActiveFilter(opt)}
-              >
-                {t(`prop.filter.${opt}`)}
-              </button>
-            ))}
+          <div className="properties__filter-bar">
+            <select 
+              className="property-filter-select"
+              value={activeFilter}
+              onChange={(e) => setActiveFilter(e.target.value)}
+            >
+              {filterOptions.map((opt) => (
+                <option key={opt} value={opt}>
+                  {t(`prop.filter.${opt}`)}
+                </option>
+              ))}
+            </select>
+            <div className="filter-select-icon">▼</div>
           </div>
         </div>
 
@@ -126,6 +138,25 @@ const Properties = () => {
                 <div className="property-card__price">
                   {property.price}
                 </div>
+
+                {/* Voice Note Audio Player */}
+                {property.voiceNote && (
+                  <div 
+                    className="property-card__voice"
+                    onClick={(e) => e.stopPropagation()} // Prevent card click navigation
+                    style={{ marginTop: '0.75rem' }}
+                  >
+                    <div style={{ fontSize: '0.7rem', color: 'var(--gold-400)', marginBottom: '4px', fontWeight: '500' }}>
+                      🎤 Voice Details
+                    </div>
+                    <audio 
+                      controls 
+                      src={property.voiceNote} 
+                      preload="none" 
+                      style={{ width: '100%', height: '32px', colorScheme: 'dark' }} 
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

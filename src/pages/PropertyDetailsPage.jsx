@@ -117,6 +117,23 @@ const PropertyDetailsPage = () => {
             </div>
           </div>
 
+          {/* Voice Note */}
+          {property.voiceNote && (
+            <div className="pd-section pd-voice-section">
+              <h3 className="pd-subtitle">🎤 Agent Voice Details</h3>
+              <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(212, 168, 83, 0.15)' }}>
+                <audio 
+                  controls 
+                  src={property.voiceNote} 
+                  preload="metadata" 
+                  style={{ width: '100%', height: '40px', outline: 'none', colorScheme: 'dark' }} 
+                >
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          )}
+
           <div className="pd-section">
             <h3 className="pd-subtitle">Description</h3>
             <p className="pd-desc">{propDesc}</p>
