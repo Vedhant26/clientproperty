@@ -6,7 +6,7 @@ export const properties = [
       hi: 'स्वतंत्र नगर - 20×40, 2 मंजिल'
     },
     price: '₹ 35 Lacs',
-    location: 'Swatantra Nagar, Ujjain',
+    location: 'Swatantra Nagar, Bhind',
     type: 'house',
     status: 'buy',
     beds: 3,
@@ -19,7 +19,7 @@ export const properties = [
       `${import.meta.env.BASE_URL}plot1.jpeg`
     ],
     description: {
-      en: 'Well-built 2-floor residential house on a 20×40 plot in Swatantra Nagar, Ujjain. Ideal for families looking for a ready-to-move home.',
+      en: 'Well-built 2-floor residential house on a 20×40 plot in Swatantra Nagar, Bhind. Ideal for families looking for a ready-to-move home.',
       hi: 'स्वतंत्र नगर, उज्जैन में 20×40 प्लॉट पर बना 2 मंजिला आवासीय मकान। रहने के लिए तैयार घर की तलाश करने वाले परिवारों के लिए आदर्श।'
     },
     amenities: {

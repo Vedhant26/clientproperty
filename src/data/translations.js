@@ -14,7 +14,7 @@ export const translations = {
     'hero.find': 'Find Your',
     'hero.dream': 'Dream Property',
     'hero.with': 'With Mahakal Properties',
-    'hero.subtitle': 'Buy, sell & invest with confidence. From premium flats in Ujjain to luxury villas in Bhopal — we make property dealing simple, transparent, and rewarding.',
+    'hero.subtitle': 'Buy, sell & invest with confidence. From premium flats in Bhind to luxury villas in Bhopal — we make property dealing simple, transparent, and rewarding.',
     'hero.btnBrowse': '🏠 Browse Properties',
     'hero.btnContact': '📞 Contact Us',
 
