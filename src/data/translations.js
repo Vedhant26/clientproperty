@@ -1,6 +1,7 @@
 export const translations = {
   en: {
     // Navbar
+    'nav.home': 'Home',
     'nav.properties': 'Properties',
     'nav.services': 'Services',
     'nav.process': 'Process',
@@ -128,6 +129,7 @@ export const translations = {
   },
   hi: {
     // Navbar
+    'nav.home': 'होम',
     'nav.properties': 'प्रॉपर्टीज़',
     'nav.services': 'सेवाएं',
     'nav.process': 'प्रक्रिया',

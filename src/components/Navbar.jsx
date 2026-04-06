@@ -39,6 +39,7 @@ const Navbar = () => {
           </Link>
 
           <div className="navbar__links">
+            <NavLink to="/">{t('nav.home')}</NavLink>
             <NavLink to="/properties">{t('nav.properties')}</NavLink>
             <NavLink to="/services">{t('nav.services')}</NavLink>
             <NavLink to="/how-it-works">{t('nav.process')}</NavLink>
@@ -63,7 +64,7 @@ const Navbar = () => {
       </nav>
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <NavLink to="/">{t('nav.properties')}</NavLink>
+        <NavLink to="/">{t('nav.home')}</NavLink>
         <NavLink to="/properties">{t('nav.properties')}</NavLink>
         <NavLink to="/services">{t('nav.services')}</NavLink>
         <NavLink to="/how-it-works">{t('nav.process')}</NavLink>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import { properties } from '../data/properties';
 import { useTranslation } from '../context/LanguageContext';
 
@@ -49,6 +50,12 @@ const PropertyDetailsPage = () => {
 
   return (
     <PageTransition>
+      <SEO 
+        title={`${propName} in ${property.location} | Mahakal Property Dealer`}
+        description={propDesc}
+        url={`https://mahakalpropertydealer.com/property/${id}`}
+        image={property.images[0]}
+      />
       <div className="property-details-page">
         {/* Gallery Hero */}
         <div className="pd-gallery">
