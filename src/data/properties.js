@@ -27,6 +27,7 @@ export const properties = [
       hi: ['2 मंजिल', '20×40 प्लॉट', 'आवासीय क्षेत्र']
     },
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117506.33593005825!2d75.760143!3d23.176467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39637469de00ff23%3A0x7f82f44e996696fa!2sUjjain%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    adminMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117506.33593005825!2d75.760143!3d23.176467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39637469de00ff23%3A0x7f82f44e996696fa!2sSwatantra%20Nagar%2C%20Ujjain%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     nearby: {
       en: [
         { name: 'Mahakal Temple', distance: '1.2 km', category: 'Shrine' },
@@ -70,6 +71,7 @@ export const properties = [
       hi: ['पूर्ण फर्निश्ड', '20×40 प्लॉट', '22 फीट रोड', 'VIP लोकेशन', 'तलघर क्षेत्र']
     },
     mapUrl: null,
+    adminMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28921.64!2d78.7830!3d26.5647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976f5dc3abb9b9b%3A0xc0b7e3bd96e96e9a!2sRemjapura%20Kumrauha%2C%20Talghar%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin",
     nearby: {
       en: [
         { name: 'Talghar Market', distance: '0.5 km', category: 'Shopping' },

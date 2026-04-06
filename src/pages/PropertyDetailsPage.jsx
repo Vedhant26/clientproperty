@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import SEO from '../components/SEO';
+import AdminLocationPanel from '../components/AdminLocationPanel';
 import { properties } from '../data/properties';
 import { useTranslation } from '../context/LanguageContext';
 
@@ -200,6 +201,9 @@ const PropertyDetailsPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Admin-only private location panel */}
+      <AdminLocationPanel property={property} />
     </PageTransition>
   );
 };
