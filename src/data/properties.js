@@ -9,7 +9,7 @@ export const properties = [
     location: 'Swatantra Nagar, Bhind',
     type: 'house',
     status: 'buy',
-    beds: 3,
+    beds: 6,
     baths: 2,
     sqft: 800,
     tags: ['2 Floor', '20×40 Plot'],
