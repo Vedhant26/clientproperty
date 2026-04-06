@@ -2376,34 +2376,77 @@ html.lenis body {
    ADMIN LOCATION PANEL
    ════════════════════════════════════════ */
 
-/* Subtle floating lock trigger */
-.admin-loc-trigger {
-  position: fixed;
-  bottom: 6rem; /* moved higher to avoid overlap with bottom nav or footers */
-  right: 1.5rem;
-  z-index: 9999; /* highest z-index */
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(30, 30, 30, 0.9);
-  border: 2px solid rgba(212, 168, 83, 0.5); /* gold border to stand out */
-  color: rgba(255, 255, 255, 0.9); /* bright icon */
-  font-size: 1.2rem;
+/* Inline Blurred Map Placeholder */
+.admin-map-preview {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.3s;
-  backdrop-filter: blur(8px);
-  -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-.admin-loc-trigger:hover {
-  background: rgba(212, 168, 83, 0.3);
-  border-color: rgba(212, 168, 83, 1);
-  color: var(--gold-400);
+.admin-map-preview:hover {
+  border-color: rgba(212, 168, 83, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 168, 83, 0.1);
 }
+
+.admin-map-blur-bg {
+  position: absolute;
+  inset: 0;
+  /* Simple CSS pattern to simulate a map if we don't have an image */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px, 40px 40px;
+  background-position: 0 0, 10px 10px;
+  filter: blur(2px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.admin-map-overlay-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(10, 10, 10, 0.8);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.admin-map-lock-icon {
+  font-size: 1.5rem;
+}
+
+.admin-map-text {
+  font-weight: 600;
+  color: var(--gold-400);
+  font-size: 1rem;
+}
+
+.admin-map-subline {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.admin-no-map {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
 
 /* Full-screen overlay */
 .admin-loc-overlay {

@@ -51,89 +51,79 @@ const AdminLocationPanel = ({ property }) => {
   };
 
   return (
-    <>
-      {/* Subtle admin trigger — small lock icon, bottom-right of page */}
-      <button
-        className="admin-loc-trigger"
-        onClick={() => setIsOpen(true)}
-        title="Admin Access"
-        aria-label="Admin Location Access"
-      >
-        {isAuth ? '🔓' : '🔒'}
-      </button>
+    <div className="pd-section admin-map-section">
+      <h3 className="pd-subtitle">🗺️ Map Location</h3>
+      
+      {/* Blurred Map Placeholder (Locked State) */}
+      {!isAuth ? (
+        <div className="admin-map-preview" onClick={() => setIsOpen(true)}>
+          <div className="admin-map-blur-bg"></div>
+          <div className="admin-map-overlay-content">
+            <span className="admin-map-lock-icon">🔒</span>
+            <span className="admin-map-text">Hidden Location</span>
+            <span className="admin-map-subline">Click to unlock map details</span>
+          </div>
+        </div>
+      ) : (
+        /* Unlocked Map (Inline) */
+        <div className="admin-unlocked-map">
+          {property.adminMapUrl ? (
+            <iframe
+              src={property.adminMapUrl}
+              width="100%"
+              height="280"
+              style={{ border: 0, borderRadius: '12px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Admin Property Location"
+            />
+          ) : (
+            <div className="admin-no-map">Map link not provided for this property.</div>
+          )}
+          <button className="admin-loc-lock-btn" onClick={handleLock} style={{ marginTop: '0.75rem' }}>
+            🔒 Relock Map
+          </button>
+        </div>
+      )}
 
-      {/* Overlay */}
-      {isOpen && (
+      {/* Password Promt Modal */}
+      {isOpen && !isAuth && (
         <div
           className="admin-loc-overlay"
           onClick={(e) => e.target === e.currentTarget && setIsOpen(false)}
         >
           <div className={`admin-loc-modal ${shake ? 'shake' : ''}`}>
-            {/* Header */}
             <div className="admin-loc-header">
               <div className="admin-loc-title">
                 <span className="admin-loc-icon">🛡️</span>
-                Admin — Property Location
+                Admin Authorization
               </div>
               <button className="admin-loc-close" onClick={() => setIsOpen(false)}>✕</button>
             </div>
 
-            {!isAuth ? (
-              /* Password Gate */
-              <div className="admin-loc-body">
-                <p className="admin-loc-hint">Enter admin password to view private location details.</p>
-                <div className="admin-loc-input-wrap">
-                  <input
-                    ref={inputRef}
-                    type="password"
-                    className={`admin-loc-input ${error ? 'error' : ''}`}
-                    placeholder="Enter password…"
-                    value={input}
-                    onChange={(e) => { setInput(e.target.value); setError(false); }}
-                    onKeyDown={handleKeyDown}
-                  />
-                  {error && <span className="admin-loc-error">❌ Incorrect password</span>}
-                </div>
-                <button className="admin-loc-btn" onClick={handleUnlock}>
-                  Unlock Location 🔓
-                </button>
+            <div className="admin-loc-body">
+              <p className="admin-loc-hint">Enter password to reveal the exact map location.</p>
+              <div className="admin-loc-input-wrap">
+                <input
+                  ref={inputRef}
+                  type="password"
+                  className={`admin-loc-input ${error ? 'error' : ''}`}
+                  placeholder="Enter password…"
+                  value={input}
+                  onChange={(e) => { setInput(e.target.value); setError(false); }}
+                  onKeyDown={handleKeyDown}
+                />
+                {error && <span className="admin-loc-error">❌ Incorrect password</span>}
               </div>
-            ) : (
-              /* Location View */
-              <div className="admin-loc-body">
-                <div className="admin-loc-address">
-                  <div className="admin-loc-address-label">📍 Full Address</div>
-                  <div className="admin-loc-address-text">
-                    {(property.address || property.location).split('\n').map((line, i) => (
-                      <div key={i}>{line}</div>
-                    ))}
-                  </div>
-                </div>
-
-                {property.adminMapUrl && (
-                  <div className="admin-loc-map">
-                    <iframe
-                      src={property.adminMapUrl}
-                      width="100%"
-                      height="260"
-                      style={{ border: 0, borderRadius: '10px' }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Admin Property Location"
-                    />
-                  </div>
-                )}
-
-                <button className="admin-loc-lock-btn" onClick={handleLock}>
-                  🔒 Lock & Sign Out
-                </button>
-              </div>
-            )}
+              <button className="admin-loc-btn" onClick={handleUnlock}>
+                Unlock Map 🔓
+              </button>
+            </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
