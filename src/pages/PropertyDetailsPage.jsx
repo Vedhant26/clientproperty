@@ -146,22 +146,16 @@ const PropertyDetailsPage = () => {
             </div>
           </div>
 
-          {/* Map Section */}
+          {/* Address Section — text only, no map */}
           <div className="pd-section pd-map-section">
-            <h3 className="pd-subtitle">Location on Map</h3>
-            <div className="pd-map-container">
-              <iframe
-                src={property.mapUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Property Location"
-              ></iframe>
+            <h3 className="pd-subtitle">📍 Address</h3>
+            <div className="pd-address-card">
+              {(property.address || property.location).split('\n').map((line, i) => (
+                <div key={i} className="pd-address-line">{line}</div>
+              ))}
             </div>
           </div>
+
 
           {/* Enhanced Contact Dealer Card */}
           <div className="pd-contact-card">

@@ -39,5 +39,48 @@ export const properties = [
         { name: 'शासकीय अस्पताल', distance: '1.5 किमी', category: 'मेडिकल' }
       ]
     }
+  },
+  {
+    id: 2,
+    name: {
+      en: 'Best VIP House - 20×40, Full Furnished',
+      hi: 'बेस्ट VIP मकान - 20×40, पूर्ण फर्निश्ड'
+    },
+    price: '₹ 35 Lakh',
+    location: 'Remjapura Kumrauha, Talghar | 22 ft Road',
+    address: '20 by 40, Full Furnished, Best VIP House\nWith Talghar\nLocation – Remjapura Kumrauha\n22 ft Road\nRate: ₹35 Lakh',
+    type: 'house',
+    status: 'buy',
+    beds: 3,
+    baths: 2,
+    sqft: 800,
+    tags: ['Full Furnished', '20×40 Plot', '22 ft Road'],
+    tags_hi: ['पूर्ण फर्निश्ड', '20×40 प्लॉट', '22 फीट रोड'],
+    image: `${import.meta.env.BASE_URL}plot2/image1.jpeg`,
+    images: [
+      `${import.meta.env.BASE_URL}plot2/image1.jpeg`,
+      `${import.meta.env.BASE_URL}plot2/image2.jpeg`
+    ],
+    description: {
+      en: 'Best VIP fully furnished house on a 20×40 plot, located in Remjapura Kumrauha, Talghar. Features a 22 ft road frontage. Ideal for families seeking a premium ready-to-move home.',
+      hi: 'Remjapura Kumrauha, Talghar में 20×40 प्लॉट पर स्थित बेस्ट VIP पूर्ण फर्निश्ड मकान। 22 फीट रोड फ्रंटेज के साथ। प्रीमियम रेडी-टू-मूव घर की तलाश में परिवारों के लिए आदर्श।'
+    },
+    amenities: {
+      en: ['Full Furnished', '20×40 Plot', '22 ft Road', 'VIP Location', 'Talghar Area'],
+      hi: ['पूर्ण फर्निश्ड', '20×40 प्लॉट', '22 फीट रोड', 'VIP लोकेशन', 'तलघर क्षेत्र']
+    },
+    mapUrl: null,
+    nearby: {
+      en: [
+        { name: 'Talghar Market', distance: '0.5 km', category: 'Shopping' },
+        { name: 'Local School', distance: '0.8 km', category: 'Education' },
+        { name: 'Community Hospital', distance: '1.2 km', category: 'Medical' }
+      ],
+      hi: [
+        { name: 'तलघर बाजार', distance: '0.5 किमी', category: 'बाजार' },
+        { name: 'स्थानीय स्कूल', distance: '0.8 किमी', category: 'शिक्षा' },
+        { name: 'सामुदायिक अस्पताल', distance: '1.2 किमी', category: 'मेडिकल' }
+      ]
+    }
   }
 ];
