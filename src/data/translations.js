@@ -133,7 +133,7 @@ export const translations = {
     'footer.quick_links': 'Quick Links',
     'footer.contact': 'Contact Info',
     'footer.rights': '© 2024 Mahakal Property Dealer. All rights reserved.',
-    'footer.dev': 'Website developed by Vedhant Bidari',
+    'footer.dev': 'Website developed by Vedhant Bidari - 7411176285',
   },
   hi: {
     // Navbar
@@ -269,6 +269,6 @@ export const translations = {
     'footer.quick_links': 'महत्वपूर्ण लिंक्स',
     'footer.contact': 'संपर्क जानकारी',
     'footer.rights': '© 2024 महाकाल प्रॉपर्टी डीलर. सर्वाधिकार सुरक्षित.',
-    'footer.dev': 'वेबसाइट वेदांत बिदारी (Vedhant Bidari) द्वारा विकसित',
+    'footer.dev': 'वेबसाइट वेदांत बिदारी (Vedhant Bidari - 7411176285) द्वारा विकसित',
   }
 };

@@ -260,5 +260,47 @@ export const properties = [
         { name: 'सत्रा बटालियन', distance: 'पास', category: 'लैंडमार्क' }
       ]
     }
+  },
+  {
+    id: 7,
+    name: {
+      en: 'G+1 House for Sale - 15×60, Shastri Nagar',
+      hi: 'G+1 बिकाऊ मकान - 15×60, शास्त्री नगर'
+    },
+    price: '₹ 38 Lakh',
+    location: '131, B Block Shastri Nagar, Ward no. 8, Bhind (M.P) 477001',
+    address: 'Plot Size: 15×60 (900 sqft)\nConstruction: 1800 sqft (G+1)\nLocation: 131, B Block Shastri Nagar, Ward no. 8, Bhind\nDistance: 300-400 mtr from National Highway\nRate: ₹38 Lakh',
+    type: 'house',
+    status: 'buy',
+    category: 'sale_residential',
+    beds: null,
+    baths: null,
+    sqft: '1800 ',
+    tags: ['G+1', '15×60 Plot', 'Near NH'],
+    tags_hi: ['G+1', '15×60 प्लॉट', 'NH के पास'],
+    image: `${import.meta.env.BASE_URL}house%20for%20sale%203/Screenshot%202026-04-07%20232926.png`,
+    images: [
+      `${import.meta.env.BASE_URL}house%20for%20sale%203/Screenshot%202026-04-07%20232926.png`,
+      `${import.meta.env.BASE_URL}house%20for%20sale%203/Screenshot%202026-04-07%20232935.png`
+    ],
+    videoNote: `${import.meta.env.BASE_URL}house%20for%20sale%203/video.mp4`,
+    description: {
+      en: 'Spacious G+1 residential house available for sale in B Block, Shastri Nagar, Bhind. It sits on a 15×60 plot (approx 900 sq.ft) with a total constructed area of 1800 sq.ft. Extremely well-located, just 300-400 meters away from the National Highway.',
+      hi: 'B ब्लॉक, शास्त्री नगर, भिंड में विशाल G+1 आवासीय मकान बिक्री के लिए। यह 15×60 प्लॉट (900 वर्ग फुट) पर बना है, जिसका कुल निर्माण क्षेत्र 1800 वर्ग फुट है। बहुत ही सुविधाजनक स्थान, राष्ट्रीय राजमार्ग (National Highway) से मात्र 300-400 मीटर अंदर।'
+    },
+    amenities: {
+      en: ['15×60 Plot Size', '1800 sqft Construction (G+1)', '300-400m from NH', 'Prime Location'],
+      hi: ['15×60 प्लॉट साइज', '1800 वर्ग फुट निर्माण (G+1)', 'NH से 300-400मी अंदर', 'प्राइम लोकेशन']
+    },
+    mapUrl: 'https://www.google.com/maps?q=26.5573405,78.769653&z=17&hl=en&output=embed',
+    adminMapUrl: 'https://www.google.com/maps?q=26.5573405,78.769653&z=17&hl=en&output=embed',
+    nearby: {
+      en: [
+        { name: 'National Highway', distance: '300-400 m', category: 'Transport' }
+      ],
+      hi: [
+        { name: 'राष्ट्रीय राजमार्ग', distance: '300-400 मीटर', category: 'परिवहन' }
+      ]
+    }
   }
 ];
