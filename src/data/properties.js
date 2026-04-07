@@ -171,5 +171,54 @@ export const properties = [
         { name: 'स्थानीय बाज़ार', distance: 'पास', category: 'बाज़ार' }
       ]
     }
+  },
+  {
+    id: 5,
+    name: {
+      en: 'New House for Sale - 22×45, Railway Crossing',
+      hi: 'बिकाऊ नया मकान - 22×45, रेलवे क्रॉसिंग'
+    },
+    price: '₹ 28 Lakh',
+    location: 'Railway Crossing, Jay Shree Garden, Bhind',
+    address: 'New House for Sale\nSize: 22 by 45\nLocation: Railway Crossing, Jay Shree Garden, Bhind\nRoad: 20 ft\nOnly 300 meters from Main Highway\nRate: ₹28 Lakh',
+    type: 'house',
+    status: 'buy',
+    category: 'sale_residential',
+    beds: null,
+    baths: null,
+    sqft: '990',
+    tags: ['22×45 Plot', '20ft Road', 'Main Highway 300m'],
+    tags_hi: ['22×45 प्लॉट', '20 फीट रोड', 'मुख्य राजमार्ग 300 मी'],
+    image: `${import.meta.env.BASE_URL}house%20for%20sale%201/WhatsApp%20Image%202026-04-07%20at%2011.08.07%20PM.jpeg`,
+    images: [
+      `${import.meta.env.BASE_URL}house%20for%20sale%201/WhatsApp%20Image%202026-04-07%20at%2011.08.07%20PM.jpeg`,
+      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-06%20235013.png`,
+      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-06%20235436.png`,
+      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-07%20231045.png`,
+      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-07%20231055.png`,
+      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-07%20231103.png`
+    ],
+    description: {
+      en: 'Newly built residential house available for sale on a 22 by 45 plot size (approx 990 sq.ft). Prime location near the Railway Crossing at Jay Shree Garden, Bhind. It features a wide 20 ft frontal road and is extremely convenient being only 300 meters away from the Main Highway.',
+      hi: '22 x 45 प्लॉट साइज (लगभग 990 वर्ग फुट) पर नवनिर्मित आवासीय मकान बिक्री के लिए। जय श्री गार्डन, भिंड में रेलवे क्रॉसिंग के पास प्रमुख स्थान। इसका फ्रंटल रोड 20 फीट चौड़ा है और यह मुख्य राजमार्ग से केवल 300 मीटर की दूरी पर स्थित अत्यंत सुविधाजनक है।'
+    },
+    amenities: {
+      en: ['22×45 Plot Size', '20 ft Wide Road', 'Near Highway (300m)', 'Prime Location'],
+      hi: ['22×45 प्लॉट साइज', '20 फीट चौड़ी सड़क', 'राजमार्ग के पास (300 मी)', 'प्राइम लोकेशन']
+    },
+    mapUrl: null,
+    adminMapUrl: null,
+    nearby: {
+      en: [
+        { name: 'Main Highway', distance: '300 m', category: 'Transport' },
+        { name: 'Railway Crossing', distance: 'Near', category: 'Transport' },
+        { name: 'Jay Shree Garden', distance: 'Nearby', category: 'Park' }
+      ],
+      hi: [
+        { name: 'मुख्य राजमार्ग', distance: '300 मीटर', category: 'परिवहन' },
+        { name: 'रेलवे क्रॉसिंग', distance: 'पास', category: 'परिवहन' },
+        { name: 'जय श्री गार्डन', distance: 'पास', category: 'पार्क' }
+      ]
+    }
   }
 ];
