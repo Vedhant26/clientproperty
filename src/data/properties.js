@@ -220,5 +220,45 @@ export const properties = [
         { name: 'जय श्री गार्डन', distance: 'पास', category: 'पार्क' }
       ]
     }
+  },
+  {
+    id: 6,
+    name: {
+      en: 'House for Sale - 20×30, Joshi Nagar',
+      hi: 'बिकाऊ मकान - 20×30, जोशी नगर'
+    },
+    price: '₹ 12 Lakh',
+    location: 'Joshi Nagar (Near Sattra Batalian), Bhind',
+    address: 'House for Sale\nSize: 20 by 30\nLocation: Joshi Nagar, Near Sattra Batalian, Bhind\nRate: ₹12 Lakh',
+    type: 'house',
+    status: 'buy',
+    category: 'sale_residential',
+    beds: null,
+    baths: null,
+    sqft: '600',
+    tags: ['20×30 Plot', 'Joshi Nagar', 'Affordable'],
+    tags_hi: ['20×30 प्लॉट', 'जोशी नगर', 'किफायती'],
+    image: `${import.meta.env.BASE_URL}house%20for%20sale%202/Screenshot%202026-04-07%20231334.png`,
+    images: [
+      `${import.meta.env.BASE_URL}house%20for%20sale%202/Screenshot%202026-04-07%20231334.png`
+    ],
+    description: {
+      en: 'Residential house available for sale on a 20 by 30 plot size (approx 600 sq.ft). Located in Joshi Nagar near Sattra Batalian, Bhind. Available at a very affordable rate of ₹12 Lakh.',
+      hi: '20 x 30 प्लॉट साइज (लगभग 600 वर्ग फुट) पर आवासीय मकान बिक्री के लिए। जोशी नगर, सत्रा बटालियन के पास, भिंड में स्थित है। यह ₹12 लाख के बहुत ही किफायती मूल्य पर उपलब्ध है।'
+    },
+    amenities: {
+      en: ['20×30 Plot Size', 'Affordable Price', 'Near Sattra Batalian'],
+      hi: ['20×30 प्लॉट साइज', 'किफायती कीमत', 'सत्रा बटालियन के पास']
+    },
+    mapUrl: null,
+    adminMapUrl: null,
+    nearby: {
+      en: [
+        { name: 'Sattra Batalian', distance: 'Near', category: 'Landmark' }
+      ],
+      hi: [
+        { name: 'सत्रा बटालियन', distance: 'पास', category: 'लैंडमार्क' }
+      ]
+    }
   }
 ];
