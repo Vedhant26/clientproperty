@@ -139,6 +139,30 @@ const Properties = () => {
                   {property.price}
                 </div>
 
+                {/* Floating Action Bar */}
+                <div className="property-card__actions" onClick={(e) => e.stopPropagation()}>
+                  <button 
+                    className="property-card-action-btn" 
+                    data-tooltip={language === 'hi' ? 'चैट करें' : 'Chat'}
+                    onClick={() => window.open('https://wa.me/918435523004', '_blank')}
+                  >💬</button>
+                  <button 
+                    className="property-card-action-btn" 
+                    data-tooltip={language === 'hi' ? 'कॉल करें' : 'Call'}
+                    onClick={() => window.open('tel:+918435523004')}
+                  >📞</button>
+                  <button 
+                    className="property-card-action-btn" 
+                    data-tooltip={language === 'hi' ? 'स्थान देखें' : 'Location'}
+                    onClick={() => window.open(property.mapUrl || 'https://maps.google.com/?q=bhind', '_blank')}
+                  >📍</button>
+                  <button 
+                    className="property-card-action-btn" 
+                    data-tooltip={language === 'hi' ? 'जरूरत बताएं' : 'Send Requirement'}
+                    onClick={() => navigate('/contact')}
+                  >📋</button>
+                </div>
+
                 {/* Voice Note Audio Player */}
                 {property.voiceNote && (
                   <div 
