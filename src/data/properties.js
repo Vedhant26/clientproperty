@@ -192,8 +192,6 @@ export const properties = [
     image: `${import.meta.env.BASE_URL}house%20for%20sale%201/WhatsApp%20Image%202026-04-07%20at%2011.08.07%20PM.jpeg`,
     images: [
       `${import.meta.env.BASE_URL}house%20for%20sale%201/WhatsApp%20Image%202026-04-07%20at%2011.08.07%20PM.jpeg`,
-      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-06%20235013.png`,
-      `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-06%20235436.png`,
       `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-07%20231045.png`,
       `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-07%20231055.png`,
       `${import.meta.env.BASE_URL}house%20for%20sale%201/Screenshot%202026-04-07%20231103.png`
@@ -301,6 +299,83 @@ export const properties = [
       hi: [
         { name: 'राष्ट्रीय राजमार्ग', distance: '300-400 मीटर', category: 'परिवहन' }
       ]
+    }
+  },
+  {
+    id: 8,
+    name: {
+      en: 'House for Sale - 20×50, Darpan Colony',
+      hi: 'बिकाऊ मकान - 20×50, दर्पण कॉलोनी'
+    },
+    price: '₹ 35 Lakh',
+    location: 'Darpan Colony (Before Bharoli Tirahe)',
+    address: 'House for Sale\nSize: 20 by 50\nLocation: Darpan Colony, Before Bharoli Tirahe\nLayout: 4 Rooms, 1 Kitchen, Lath Bath, Baithak, Gallery\nRate: ₹35 Lakh',
+    type: 'house',
+    status: 'buy',
+    category: 'sale_residential',
+    beds: 4,
+    baths: 1,
+    sqft: '1000',
+    tags: ['20×50 Plot', '4 Rooms', 'Darpan Colony'],
+    tags_hi: ['20×50 प्लॉट', '4 कमरे', 'दर्पण कॉलोनी'],
+    image: `${import.meta.env.BASE_URL}house%20sale%204/Screenshot%202026-04-09%20214313.png`,
+    images: [
+      `${import.meta.env.BASE_URL}house%20sale%204/Screenshot%202026-04-09%20214313.png`,
+      `${import.meta.env.BASE_URL}house%20sale%204/Screenshot%202026-04-09%20214325.png`
+    ],
+    description: {
+      en: 'Spacious residential house available for sale on a 20×50 plot size. Located in Darpan Colony, just before Bharoli Tirahe. It includes 4 rooms, 1 kitchen, bathroom, baithak (living room), and a gallery.',
+      hi: '20×50 प्लॉट साइज पर विशाल आवासीय मकान बिक्री के लिए। दर्पण कॉलोनी में स्थित, भरौली तिराहे से ठीक पहले। इसमें 4 कमरे, 1 रसोई, लैट-बाथ, बैठक और गैलरी शामिल हैं।'
+    },
+    amenities: {
+      en: ['20×50 Plot Size', '4 Rooms', 'Kitchen & Bath', 'Baithak & Gallery'],
+      hi: ['20×50 प्लॉट साइज', '4 कमरे', 'रसोई और बाथरूम', 'बैठक और गैलरी']
+    },
+    mapUrl: 'https://www.google.com/maps?q=26.5462683,78.78966&z=17&hl=en&output=embed',
+    adminMapUrl: 'https://www.google.com/maps?q=26.5462683,78.78966&z=17&hl=en&output=embed',
+    nearby: {
+      en: [
+        { name: 'Bharoli Tirahe', distance: 'Near', category: 'Landmark' }
+      ],
+      hi: [
+        { name: 'भरौली तिराहे', distance: 'पास', category: 'लैंडमार्क' }
+      ]
+    }
+  },
+  {
+    id: 9,
+    name: {
+      en: 'Premium Plot - Best Service',
+      hi: 'प्रीमियम प्लॉट - बेहतरीन सेवा'
+    },
+    price: '₹ 34 Lakh',
+    location: 'Bhind (See Map for Location)',
+    address: 'Premium Plot for Sale\nFeatures: Best Plot, Best Service\nRate: ₹34 Lakh',
+    type: 'plot',
+    status: 'buy',
+    category: 'lands_plots',
+    beds: null,
+    baths: null,
+    sqft: 'Custom',
+    tags: ['Best Plot', 'Premium', '₹ 34 Lakh'],
+    tags_hi: ['बेहतरीन प्लॉट', 'प्रीमियम', '₹ 34 लाख'],
+    image: `${import.meta.env.BASE_URL}house%20sale%205/Screenshot%202026-04-09%20214719.png`,
+    images: [
+      `${import.meta.env.BASE_URL}house%20sale%205/Screenshot%202026-04-09%20214719.png`
+    ],
+    description: {
+      en: 'Offering the best plot with the best service. Prime real estate opportunity available at 34 Lakh. See map for exact location coordinates.',
+      hi: 'सबसे अच्छी सेवा के साथ सबसे अच्छे प्लॉट की पेशकश। 34 लाख में प्राइम रियल एस्टेट का अवसर उपलब्ध है। सटीक स्थान के लिए नक्शा देखें।'
+    },
+    amenities: {
+      en: ['Best Plot', 'Premium Location', 'Best Service'],
+      hi: ['बेहतरीन प्लॉट', 'प्रीमियम लोकेशन', 'सर्वोत्तम सेवा']
+    },
+    mapUrl: 'https://www.google.com/maps?q=26.5516683,78.8151695&z=17&hl=en&output=embed',
+    adminMapUrl: 'https://www.google.com/maps?q=26.5516683,78.8151695&z=17&hl=en&output=embed',
+    nearby: {
+      en: [],
+      hi: []
     }
   }
 ];
