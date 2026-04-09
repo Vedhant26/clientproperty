@@ -74,6 +74,13 @@ const PropertyDetailsPage = () => {
             {property.images.map((img, i) => (
               <div className="pd-slide" key={i}>
                 <img src={img} alt={`${propName} ${i + 1}`} style={{ pointerEvents: 'none' }} />
+                <div className="property-watermark">
+                  <div className="property-watermark__text">Mahakal Properties</div>
+                </div>
+                <div className="verified-photo-badge" style={{ top: '1.5rem', right: '1.5rem' }}>
+                  <div className="verified-photo-badge__icon">✓</div>
+                  <div className="verified-photo-badge__text">{t('prop.verified')}</div>
+                </div>
               </div>
             ))}
           </motion.div>

@@ -61,6 +61,7 @@ export const translations = {
     'prop.call': 'Call Now',
     'prop.whatsapp': 'WhatsApp',
     'prop.back': 'Back to Properties',
+    'prop.verified': 'Verified Photo',
 
     // Post Property CTA
     'cta.want_to_sell': 'Want to Sell or Rent Your Property?',
@@ -197,6 +198,7 @@ export const translations = {
     'prop.call': 'कॉल करें',
     'prop.whatsapp': 'व्हाट्सएप (WhatsApp)',
     'prop.back': 'वापस प्रॉपर्टीज़ पर',
+    'prop.verified': 'सत्यापित फोटो',
 
     // Post Property CTA
     'cta.want_to_sell': 'क्या आप अपनी प्रॉपर्टी बेचना या किराए पर देना चाहते हैं?',

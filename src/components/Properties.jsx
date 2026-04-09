@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PropertyImageCarousel = ({ images, altText, type }) => {
   const [index, setIndex] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!images || images.length <= 1) return;
@@ -28,6 +29,13 @@ const PropertyImageCarousel = ({ images, altText, type }) => {
           className={`property-card__carousel-img ${i === index ? 'active' : ''}`} 
         />
       ))}
+      <div className="property-watermark">
+        <div className="property-watermark__text">Mahakal Properties</div>
+      </div>
+      <div className="verified-photo-badge">
+        <div className="verified-photo-badge__icon">✓</div>
+        <div className="verified-photo-badge__text">{t('prop.verified')}</div>
+      </div>
       <div className="property-card__badge">{type}</div>
     </div>
   );

@@ -710,6 +710,68 @@ ul {
   text-transform: uppercase;
 }
 
+/* Watermark & Verification Badge */
+.property-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.property-watermark__text {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 5vw, 2.5rem);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.12);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transform: rotate(-30deg);
+  white-space: nowrap;
+  user-select: none;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.verified-photo-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 168, 83, 0.4);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.verified-photo-badge__icon {
+  width: 14px;
+  height: 14px;
+  background: var(--gold-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: var(--dark-900);
+  font-weight: 900;
+}
+
+.verified-photo-badge__text {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--gold-200);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .property-card__info {
   padding: 0.75rem;
 }
