@@ -18,6 +18,7 @@ import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import HowItWorksPage from './pages/HowItWorksPage';
+import Chatbot from './components/Chatbot';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,6 +113,7 @@ function App() {
         </AnimatePresence>
       </main>
 
+      <Chatbot />
       <Footer />
     </>
   );
