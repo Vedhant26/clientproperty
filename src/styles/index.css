@@ -2857,4 +2857,36 @@ html.lenis body {
 .chatbot-action-btn { padding: 6px 12px; background: rgba(212, 168, 83, 0.1); border: 1px solid rgba(212, 168, 83, 0.2); border-radius: 20px; font-size: 0.7rem; color: var(--gold-400); cursor: pointer; transition: all 0.3s; }
 .chatbot-action-btn:hover { background: var(--gold-400); color: var(--dark-900); }
 @keyframes message-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* M Logo Styling */
+.chatbot-m-logo {
+  font-family: var(--font-display) !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+.chatbot-m-btn-text {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--dark-900);
+  line-height: 1;
+}
+
+/* Typing dots animation */
+.typing-dots span {
+  animation: typingBounce 1.4s infinite;
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 0.5;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.3; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
 @media (max-width: 480px) { .chatbot-window { width: 85vw; height: 60vh; bottom: 80px; } }
