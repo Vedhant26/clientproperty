@@ -380,5 +380,45 @@ export const properties = [
       en: [],
       hi: []
     }
+  },
+  {
+    id: 10,
+    name: {
+      en: 'House for Sale - 20×30, Near Lahar Chungi',
+      hi: 'बिकाऊ मकान - 20×30, लहार चुंगी के पास'
+    },
+    price: '₹ 20 Lakh',
+    location: 'Near Lahar Chungi, Bhind',
+    address: 'House for Sale\nSize: 20 by 30\nLocation: Near Lahar Chungi, Bhind\nRate: ₹20 Lakh',
+    type: 'house',
+    status: 'buy',
+    category: 'sale_residential',
+    beds: null,
+    baths: null,
+    sqft: '600',
+    tags: ['20×30 Plot', 'Near Lahar Chungi', '₹ 20 Lakh'],
+    tags_hi: ['20×30 प्लॉट', 'लहार चुंगी के पास', '₹ 20 लाख'],
+    image: `${import.meta.env.BASE_URL}house%20for%20sale%207/Screenshot%202026-04-13%20143318.png`,
+    images: [
+      `${import.meta.env.BASE_URL}house%20for%20sale%207/Screenshot%202026-04-13%20143318.png`
+    ],
+    description: {
+      en: 'Residential house available for sale on a 20 by 30 plot size (approx 600 sq.ft). Conveniently located near Lahar Chungi, Bhind. Offered at ₹20 Lakh.',
+      hi: '20 x 30 प्लॉट साइज (लगभग 600 वर्ग फुट) पर आवासीय मकान बिक्री के लिए। लहार चुंगी के पास, भिंड में सुविधाजनक स्थान पर स्थित। ₹20 लाख में उपलब्ध।'
+    },
+    amenities: {
+      en: ['20×30 Plot Size', 'Near Lahar Chungi', 'Residential Area'],
+      hi: ['20×30 प्लॉट साइज', 'लहार चुंगी के पास', 'आवासीय क्षेत्र']
+    },
+    mapUrl: 'https://www.google.com/maps?q=26.55785,78.80385&z=17&hl=en&output=embed',
+    adminMapUrl: 'https://www.google.com/maps?q=26.55785,78.80385&z=17&hl=en&output=embed',
+    nearby: {
+      en: [
+        { name: 'Lahar Chungi', distance: 'Near', category: 'Landmark' }
+      ],
+      hi: [
+        { name: 'लहार चुंगी', distance: 'पास', category: 'लैंडमार्क' }
+      ]
+    }
   }
 ];
