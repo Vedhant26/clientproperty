@@ -202,7 +202,7 @@ const PropertyDetailsPage = () => {
           {/* Enhanced Contact Dealer Card */}
           <div className="pd-contact-card">
             <div className="pd-dealer-info">
-              <img src={`${import.meta.env.BASE_URL}me.jpeg`} alt="Dealer" className="pd-dealer-img" />
+              <img src={`${import.meta.env.BASE_URL}me.jpeg`} alt="Dealer" className="pd-dealer-img" loading="lazy" width="500" height="750" decoding="async" />
               <h3 className="pd-dealer-name">Shivam Tomar</h3>
               <span className="pd-dealer-tag">Owner & Dealer</span>
             </div>

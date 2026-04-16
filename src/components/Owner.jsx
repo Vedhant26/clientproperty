@@ -37,6 +37,10 @@ const Owner = () => {
               src={`${import.meta.env.BASE_URL}me.jpeg`}
               alt={t('owner.name')}
               className="owner__photo"
+              loading="lazy"
+              width="500"
+              height="750"
+              decoding="async"
             />
           </div>
 
