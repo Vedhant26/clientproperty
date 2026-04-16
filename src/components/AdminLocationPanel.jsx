@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const ADMIN_PASSWORD = 'tomarmp30s';
+const ADMIN_PASSWORD = 'tomarTOMAR_MP30Ss';
 const SESSION_KEY = 'mpd_admin_auth';
 
 const AdminLocationPanel = ({ property }) => {
@@ -53,7 +53,7 @@ const AdminLocationPanel = ({ property }) => {
   return (
     <div className="pd-section admin-map-section">
       <h3 className="pd-subtitle">🗺️ Map Location</h3>
-      
+
       {/* Blurred Map Placeholder (Locked State) */}
       {!isAuth ? (
         <div className="admin-map-preview" onClick={() => setIsOpen(true)}>

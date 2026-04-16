@@ -134,7 +134,7 @@ export const translations = {
     'footer.quick_links': 'Quick Links',
     'footer.contact': 'Contact Info',
     'footer.rights': '© 2024 Mahakal Property Dealer. All rights reserved.',
-    'footer.dev': 'TOMAR_MP30S',
+    'footer.dev': 'TOMAR_TOMAR_MP30SS',
   },
   hi: {
     // Navbar
@@ -271,6 +271,6 @@ export const translations = {
     'footer.quick_links': 'महत्वपूर्ण लिंक्स',
     'footer.contact': 'संपर्क जानकारी',
     'footer.rights': '© 2024 महाकाल प्रॉपर्टी डीलर. सर्वाधिकार सुरक्षित.',
-    'footer.dev': 'MP30',
+    'footer.dev': 'TOMAR_MP30S',
   }
 };
