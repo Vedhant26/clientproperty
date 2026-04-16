@@ -3018,3 +3018,282 @@ html.lenis body {
   30% { transform: translateY(-5px); opacity: 1; }
 }
 @media (max-width: 480px) { .chatbot-window { width: 85vw; height: 60vh; bottom: 80px; } }
+
+/* ════════════════════════════════════════
+   INTRO LOADER — Apple-Style Cinematic Reveal
+   ════════════════════════════════════════ */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* GSAP sets to 1 */
+  overflow: hidden;
+}
+
+/* Subtle radial ambient glow behind brand */
+.loader::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 168, 83, 0.08) 0%,
+    rgba(212, 168, 83, 0.03) 35%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: loader-ambient-pulse 4s ease-in-out infinite;
+}
+
+/* Floating micro-particles background */
+.loader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, rgba(212, 168, 83, 0.15) 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 65%, rgba(212, 168, 83, 0.1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 75% 15%, rgba(212, 168, 83, 0.12) 50%, transparent 50%),
+    radial-gradient(1px 1px at 85% 75%, rgba(212, 168, 83, 0.08) 50%, transparent 50%),
+    radial-gradient(1px 1px at 25% 80%, rgba(212, 168, 83, 0.1) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 55% 35%, rgba(212, 168, 83, 0.06) 50%, transparent 50%),
+    radial-gradient(1px 1px at 92% 45%, rgba(212, 168, 83, 0.09) 50%, transparent 50%),
+    radial-gradient(1px 1px at 35% 45%, rgba(212, 168, 83, 0.07) 50%, transparent 50%);
+  animation: loader-particles-drift 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes loader-ambient-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+@keyframes loader-particles-drift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+
+/* ── Loader Content Wrapper ── */
+.loader__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Trident Icon ── */
+.loader__icon {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 20px rgba(212, 168, 83, 0.4))
+          drop-shadow(0 0 60px rgba(212, 168, 83, 0.15));
+  animation: loader-icon-glow 3s ease-in-out infinite;
+}
+
+@keyframes loader-icon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(212, 168, 83, 0.4))
+            drop-shadow(0 0 60px rgba(212, 168, 83, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(212, 168, 83, 0.6))
+            drop-shadow(0 0 80px rgba(212, 168, 83, 0.25));
+  }
+}
+
+/* ── Brand Name — Premium Typography ── */
+.loader__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 12vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: transparent;
+  position: relative;
+  --shine-pos: -50%;
+
+  /* Gold gradient text fill */
+  background: linear-gradient(
+    135deg,
+    #f0dca0 0%,
+    #d4a853 25%,
+    #c9952b 50%,
+    #d4a853 75%,
+    #f0dca0 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shine sweep overlay */
+.loader__brand::after {
+  content: 'MAHAKAL';
+  position: absolute;
+  inset: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 12vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 248, 230, 0.7) 45%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 248, 230, 0.7) 55%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: var(--shine-pos) 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+}
+
+/* ── Individual Letters — Neon Gold Glow ── */
+.loader__letter {
+  display: inline-block;
+  position: relative;
+  text-shadow:
+    0 0 10px rgba(212, 168, 83, 0.4),
+    0 0 30px rgba(212, 168, 83, 0.2),
+    0 0 60px rgba(212, 168, 83, 0.1),
+    0 0 100px rgba(212, 168, 83, 0.05);
+  /* Override text-fill for glow to work alongside gradient */
+  -webkit-text-fill-color: transparent;
+  animation: loader-letter-glow 3s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+/* Give each letter a slight delay variation for organic feel */
+.loader__letter:nth-child(1) { --i: 0; }
+.loader__letter:nth-child(2) { --i: 1; }
+.loader__letter:nth-child(3) { --i: 2; }
+.loader__letter:nth-child(4) { --i: 3; }
+.loader__letter:nth-child(5) { --i: 4; }
+.loader__letter:nth-child(6) { --i: 5; }
+.loader__letter:nth-child(7) { --i: 6; }
+
+@keyframes loader-letter-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(212, 168, 83, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(212, 168, 83, 0.5))
+            drop-shadow(0 0 40px rgba(212, 168, 83, 0.2));
+  }
+}
+
+/* ── Tagline ── */
+.loader__tagline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.7rem, 2.5vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(212, 168, 83, 0.5);
+  margin-top: 1rem;
+  text-shadow: 0 0 20px rgba(212, 168, 83, 0.15);
+}
+
+/* ── Animated Line / Progress ── */
+.loader__line {
+  width: 120px;
+  height: 1px;
+  background: rgba(212, 168, 83, 0.1);
+  margin-top: 2rem;
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader__line-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 168, 83, 0.6),
+    rgba(240, 220, 160, 0.8),
+    rgba(212, 168, 83, 0.6),
+    transparent
+  );
+  animation: loader-line-sweep 2s ease-in-out infinite;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(212, 168, 83, 0.3),
+              0 0 30px rgba(212, 168, 83, 0.1);
+}
+
+@keyframes loader-line-sweep {
+  0% {
+    left: -30%;
+    width: 30%;
+  }
+  50% {
+    left: 50%;
+    width: 30%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}
+
+/* ── Responsive — Loader ── */
+@media (min-width: 768px) {
+  .loader__icon {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .loader__tagline {
+    margin-top: 1.5rem;
+  }
+
+  .loader__line {
+    width: 180px;
+    margin-top: 2.5rem;
+  }
+
+  .loader::before {
+    width: 900px;
+    height: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .loader__icon {
+    font-size: 4rem;
+  }
+}
