@@ -134,7 +134,7 @@ export const translations = {
     'footer.quick_links': 'Quick Links',
     'footer.contact': 'Contact Info',
     'footer.rights': '© 2024 Mahakal Property Dealer. All rights reserved.',
-    'footer.dev': 'MP30 SHIVAM',
+    'footer.dev': 'TOMAR_MP30S',
   },
   hi: {
     // Navbar
