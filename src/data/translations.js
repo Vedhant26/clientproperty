@@ -10,13 +10,13 @@ export const translations = {
     'nav.getInTouch': 'Get In Touch',
 
     // Hero
-    'hero.badge': 'Trusted Property Dealer in Madhya Pradesh',
-    'hero.find': 'Find Your',
-    'hero.dream': 'Dream Property',
-    'hero.with': 'With Mahakal Properties',
-    'hero.subtitle': 'Buy, sell & invest with confidence. From premium flats in Bhind to luxury villas in Bhopal — we make property dealing simple, transparent, and rewarding.',
-    'hero.btnBrowse': '🏠 Browse Properties',
-    'hero.btnContact': '📞 Contact Us',
+    'hero.badge': 'Trusted Since 2014 · Madhya Pradesh',
+    'hero.find': 'Your Next',
+    'hero.dream': 'Dream Property.',
+    'hero.with': 'Starts Here.',
+    'hero.subtitle': 'Buy, sell, and invest with confidence. Premium properties across Madhya Pradesh — simple, transparent, and rewarding.',
+    'hero.btnBrowse': 'Explore Properties',
+    'hero.btnContact': 'Get in Touch',
 
     // Language
     'lang.select': 'Select Your Language',
@@ -147,13 +147,13 @@ export const translations = {
     'nav.getInTouch': 'संपर्क करें',
 
     // Hero
-    'hero.badge': 'मध्य प्रदेश में भरोसेमंद प्रॉपर्टी डीलर',
-    'hero.find': 'खोजें अपना',
-    'hero.dream': 'सपनों का घर',
-    'hero.with': 'महाकाल प्रॉपर्टी के साथ',
-    'hero.subtitle': 'विश्वास के साथ खरीदें, बेचें और निवेश करें। उज्जैन में प्रीमियम फ्लैट्स से लेकर भोपाल में लग्जरी विला तक — हम प्रॉपर्टी डीलिंग को सरल, पारदर्शी और लाभदायक बनाते हैं।',
-    'hero.btnBrowse': '🏠 प्रॉपर्टीज़ देखें',
-    'hero.btnContact': '📞 संपर्क करें',
+    'hero.badge': '2014 से भरोसेमंद · मध्य प्रदेश',
+    'hero.find': 'आपका अगला',
+    'hero.dream': 'सपनों का घर।',
+    'hero.with': 'यहीं से शुरू।',
+    'hero.subtitle': 'विश्वास के साथ खरीदें, बेचें और निवेश करें। पूरे मध्य प्रदेश में प्रीमियम प्रॉपर्टीज़ — सरल, पारदर्शी और लाभदायक।',
+    'hero.btnBrowse': 'प्रॉपर्टीज़ देखें',
+    'hero.btnContact': 'संपर्क करें',
 
     // Language
     'lang.select': 'अपनी भाषा चुनें',

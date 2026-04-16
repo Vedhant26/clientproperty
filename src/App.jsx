@@ -54,18 +54,53 @@ function App() {
     };
   }, []);
 
-  // Loading animation
+  // Loading animation — Apple-style cinematic reveal
   useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => {
         setLoading(false);
-        // Ensure scroll is at top on load
         window.scrollTo(0, 0);
       }
     });
 
-    tl.to('.loader__bar', { width: '100%', duration: 1.5, ease: 'power2.inOut' })
-      .to('.loader', { yPercent: -100, duration: 0.8, ease: 'power3.inOut' }, '+=0.2');
+    // Phase 1: Letter-by-letter reveal of brand name
+    tl.set('.loader', { opacity: 1 })
+      .from('.loader__letter', {
+        opacity: 0,
+        y: 30,
+        filter: 'blur(8px)',
+        duration: 0.6,
+        stagger: 0.06,
+        ease: 'power3.out',
+      })
+      // Phase 2: Shine sweep across letters
+      .to('.loader__brand', {
+        '--shine-pos': '200%',
+        duration: 1.2,
+        ease: 'power2.inOut',
+      }, '-=0.1')
+      // Phase 3: Tagline fades in
+      .from('.loader__tagline', {
+        opacity: 0,
+        y: 10,
+        duration: 0.6,
+        ease: 'power2.out',
+      }, '-=0.8')
+      // Phase 4: Hold for a moment
+      .to({}, { duration: 0.5 })
+      // Phase 5: Cinematic curtain lift
+      .to('.loader__content', {
+        opacity: 0,
+        y: -30,
+        filter: 'blur(4px)',
+        duration: 0.5,
+        ease: 'power2.in',
+      })
+      .to('.loader', {
+        yPercent: -100,
+        duration: 0.7,
+        ease: 'power3.inOut',
+      }, '-=0.2');
 
     return () => tl.kill();
   }, []);
@@ -80,12 +115,19 @@ function App() {
   if (loading) {
     return (
       <div className="loader">
-        <div className="loader__logo">
-          <span className="loader__text">MP</span>
-          <span className="loader__emoji">👑🔱</span>
-        </div>
-        <div className="loader__bar-track">
-          <div className="loader__bar"></div>
+        <div className="loader__content">
+          <div className="loader__icon">
+            <span>🔱</span>
+          </div>
+          <div className="loader__brand">
+            {'MAHAKAL'.split('').map((char, i) => (
+              <span key={i} className="loader__letter">{char}</span>
+            ))}
+          </div>
+          <div className="loader__tagline">PROPERTY DEALER</div>
+          <div className="loader__line">
+            <div className="loader__line-inner"></div>
+          </div>
         </div>
       </div>
     );

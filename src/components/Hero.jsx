@@ -10,42 +10,54 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.2 });
+      const tl = gsap.timeline({ delay: 0.3 });
 
-      tl.from('.hero__badge', {
+      // Apple-style cinematic entrance: elements reveal one by one with precise timing
+      tl.from('.hero__overline', {
         opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: 'power3.out',
+        y: 12,
+        duration: 0.9,
+        ease: 'power2.out',
       })
         .from(
-          '.hero__title .line',
+          '.hero__title .word',
           {
             opacity: 0,
-            y: 60,
-            duration: 0.8,
-            stagger: 0.12,
-            ease: 'power3.out',
+            y: 80,
+            rotateX: 40,
+            duration: 1,
+            stagger: 0.08,
+            ease: 'expo.out',
           },
           '-=0.3'
+        )
+        .from(
+          '.hero__accent-line',
+          {
+            scaleX: 0,
+            duration: 0.8,
+            ease: 'expo.out',
+          },
+          '-=0.4'
         )
         .from(
           '.hero__subtitle',
           {
             opacity: 0,
-            y: 30,
-            duration: 0.6,
-            ease: 'power3.out',
+            y: 20,
+            duration: 0.8,
+            ease: 'power2.out',
           },
-          '-=0.4'
+          '-=0.5'
         )
         .from(
-          '.hero__actions',
+          '.hero__actions .hero__btn',
           {
             opacity: 0,
             y: 20,
-            duration: 0.5,
-            ease: 'power3.out',
+            duration: 0.6,
+            stagger: 0.12,
+            ease: 'power2.out',
           },
           '-=0.3'
         )
@@ -53,7 +65,7 @@ const Hero = () => {
           '.hero__scroll-indicator',
           {
             opacity: 0,
-            duration: 0.5,
+            duration: 0.8,
           },
           '-=0.2'
         );
@@ -69,29 +81,36 @@ const Hero = () => {
       </div>
 
       <div className="container hero__content">
-        <div className="hero__badge">
-          <span className="hero__badge-dot"></span>
-          {t('hero.badge')}
+        <div className="hero__overline">
+          <span className="hero__overline-dot"></span>
+          <span className="hero__overline-text">{t('hero.badge')}</span>
         </div>
 
         <h1 className="hero__title">
-          <span className="line">{t('hero.find')}</span>
-          <span className="line">
-            <span className="gold">{t('hero.dream')}</span>
+          <span className="hero__title-line">
+            <span className="word">{t('hero.find')}</span>
           </span>
-          <span className="line">{t('hero.with')}</span>
+          <span className="hero__title-line">
+            <span className="word hero__title-highlight">{t('hero.dream')}</span>
+          </span>
+          <span className="hero__title-line">
+            <span className="word">{t('hero.with')}</span>
+          </span>
         </h1>
+
+        <div className="hero__accent-line"></div>
 
         <p className="hero__subtitle">
           {t('hero.subtitle')}
         </p>
 
         <div className="hero__actions">
-          <Link to="/properties" className="btn-primary">
-            <span>{t('hero.btnBrowse')}</span>
+          <Link to="/properties" className="hero__btn hero__btn--primary">
+            <span className="hero__btn-text">{t('hero.btnBrowse')}</span>
+            <span className="hero__btn-arrow">→</span>
           </Link>
-          <Link to="/contact" className="btn-secondary">
-            {t('hero.btnContact')}
+          <Link to="/contact" className="hero__btn hero__btn--secondary">
+            <span className="hero__btn-text">{t('hero.btnContact')}</span>
           </Link>
         </div>
       </div>

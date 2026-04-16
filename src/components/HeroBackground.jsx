@@ -7,147 +7,131 @@ const HeroBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    
+
     let animationFrameId;
     let width = canvas.offsetWidth;
     let height = canvas.offsetHeight;
-    
-    // Scale for high DPI displays
+
     const dpr = window.devicePixelRatio || 1;
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.scale(dpr, dpr);
 
-    // Parallax target
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetX = 0;
-    let targetY = 0;
+    // Floating luminous particles — Apple-style subtle glow
+    const particles = [];
+    const numParticles = window.innerWidth > 768 ? 60 : 30;
 
-    const handleMouseMove = (e) => {
-      targetX = (e.clientX - width / 2) * 0.05;
-      targetY = (e.clientY - height / 2) * 0.05;
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Building definitions
-    const buildings = [];
-    const numBuildings = window.innerWidth > 768 ? 40 : 20;
-
-    for (let i = 0; i < numBuildings; i++) {
-      buildings.push({
-        x: Math.random() * width * 1.5 - width * 0.25,
-        y: Math.random() * height * 1.5 - height * 0.25,
-        width: Math.random() * 60 + 20,
-        height: Math.random() * 200 + 100,
-        speedY: Math.random() * 0.2 + 0.05,
-        opacity: Math.random() * 0.3 + 0.05,
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 1.5 + 0.5,
+        speedX: (Math.random() - 0.5) * 0.15,
+        speedY: (Math.random() - 0.5) * 0.12,
+        opacity: Math.random() * 0.35 + 0.05,
+        pulseSpeed: Math.random() * 0.008 + 0.003,
+        pulseOffset: Math.random() * Math.PI * 2,
       });
     }
 
-    // Isometric projection helpers
-    const isoX = (x, y) => x - y;
-    const isoY = (x, y) => (x + y) / 2;
+    // Connection lines between nearby particles
+    const maxDist = 140;
 
-    const drawBuilding = (b, offset) => {
-      // Base coordinates
-      const bx = b.x + offset.x;
-      const by = b.y + offset.y;
-      
-      const p1x = isoX(bx, by);
-      const p1y = isoY(bx, by);
-      
-      const p2x = isoX(bx + b.width, by);
-      const p2y = isoY(bx + b.width, by);
-      
-      const p3x = isoX(bx + b.width, by + b.width);
-      const p3y = isoY(bx + b.width, by + b.width);
-      
-      const p4x = isoX(bx, by + b.width);
-      const p4y = isoY(bx, by + b.width);
-      
-      // Top coordinates
-      const t1y = p1y - b.height;
-      const t2y = p2y - b.height;
-      const t3y = p3y - b.height;
-      const t4y = p4y - b.height;
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+    let targetX = width / 2;
+    let targetY = height / 2;
 
-      ctx.strokeStyle = `rgba(212, 168, 83, ${b.opacity})`;
-      ctx.lineWidth = 1;
-      
-      ctx.beginPath();
-      
-      // Top face
-      ctx.moveTo(p1x, t1y);
-      ctx.lineTo(p2x, t2y);
-      ctx.lineTo(p3x, t3y);
-      ctx.lineTo(p4x, t4y);
-      ctx.closePath();
-      
-      // Left face
-      ctx.moveTo(p1x, t1y);
-      ctx.lineTo(p4x, t4y);
-      ctx.lineTo(p4x, p4y);
-      ctx.lineTo(p1x, p1y);
-      ctx.closePath();
-
-      // Right face
-      ctx.moveTo(p4x, t4y);
-      ctx.lineTo(p3x, t3y);
-      ctx.lineTo(p3x, p3y);
-      ctx.lineTo(p4x, p4y);
-      ctx.closePath();
-      
-      ctx.stroke();
-
-      // Optional: Add some horizontal lines to simulate floors for taller buildings
-      if (b.height > 150 && b.opacity > 0.15) {
-          const floors = Math.floor(b.height / 20);
-          for(let i=1; i<floors; i++) {
-              const floorY = p4y - (i * 20);
-              const flLeftY = p1y - (i * 20);
-              const flRightY = p3y - (i * 20);
-              
-              ctx.beginPath();
-              // Left face floor line
-              ctx.moveTo(p1x, flLeftY);
-              ctx.lineTo(p4x, floorY);
-              // Right face floor line
-              ctx.lineTo(p3x, flRightY);
-              ctx.stroke();
-          }
-      }
+    const handleMouseMove = (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
     };
+
+    window.addEventListener('mousemove', handleMouseMove);
 
     let time = 0;
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
-      
-      // Smooth parallax easing
-      mouseX += (targetX - mouseX) * 0.05;
-      mouseY += (targetY - mouseY) * 0.05;
-      
-      time += 0.2; // Slow elegant pan over time
-      
-      const offset = { x: mouseX + time, y: mouseY + time };
 
-      // Sort buildings back to front for crude depth (isometric Y roughly is x+y)
-      buildings.sort((a, b) => (a.x + a.y) - (b.x + b.y));
+      mouseX += (targetX - mouseX) * 0.03;
+      mouseY += (targetY - mouseY) * 0.03;
 
-      buildings.forEach((b) => {
-        // Move buildings slightly
-        b.y -= b.speedY;
-        b.x -= b.speedY; // move diagonally 
-        
-        // Wrap around gracefully
-        if (b.y < -height || b.x < -width) {
-          b.y = height + Math.random() * 200;
-          b.x = width + Math.random() * 200;
+      time += 1;
+
+      // Draw ambient gradient orbs (very subtle)
+      const orbGrad = ctx.createRadialGradient(
+        width * 0.3, height * 0.4, 0,
+        width * 0.3, height * 0.4, width * 0.5
+      );
+      orbGrad.addColorStop(0, 'rgba(201, 149, 43, 0.03)');
+      orbGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = orbGrad;
+      ctx.fillRect(0, 0, width, height);
+
+      const orbGrad2 = ctx.createRadialGradient(
+        width * 0.75, height * 0.7, 0,
+        width * 0.75, height * 0.7, width * 0.4
+      );
+      orbGrad2.addColorStop(0, 'rgba(201, 149, 43, 0.02)');
+      orbGrad2.addColorStop(1, 'transparent');
+      ctx.fillStyle = orbGrad2;
+      ctx.fillRect(0, 0, width, height);
+
+      // Update and draw particles
+      particles.forEach((p, i) => {
+        // Gentle movement
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        // Subtle mouse repulsion
+        const dx = p.x - mouseX;
+        const dy = p.y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 200) {
+          const force = (200 - dist) / 200 * 0.3;
+          p.x += (dx / dist) * force;
+          p.y += (dy / dist) * force;
         }
 
-        drawBuilding(b, offset);
+        // Wrap around
+        if (p.x < -10) p.x = width + 10;
+        if (p.x > width + 10) p.x = -10;
+        if (p.y < -10) p.y = height + 10;
+        if (p.y > height + 10) p.y = -10;
+
+        // Pulsing opacity
+        const pulse = Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.5 + 0.5;
+        const alpha = p.opacity * (0.5 + pulse * 0.5);
+
+        // Draw particle with soft glow
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212, 168, 83, ${alpha})`;
+        ctx.fill();
+
+        // Glow effect around particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * 4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212, 168, 83, ${alpha * 0.08})`;
+        ctx.fill();
+
+        // Draw connections
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const cdx = p.x - p2.x;
+          const cdy = p.y - p2.y;
+          const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
+          if (cdist < maxDist) {
+            const lineAlpha = (1 - cdist / maxDist) * 0.06;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(212, 168, 83, ${lineAlpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
       });
 
       animationFrameId = requestAnimationFrame(render);
@@ -173,22 +157,25 @@ const HeroBackground = () => {
   }, []);
 
   return (
-    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0, opacity: 0.7 }}>
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0 }}>
       <canvas
         ref={canvasRef}
         style={{
           width: '100%',
           height: '100%',
           display: 'block',
-          background: 'radial-gradient(ellipse at bottom right, rgba(212, 168, 83, 0.05), transparent 60%)',
         }}
       />
-      {/* Dark vignette overlay for text legibility */}
-      <div 
+      {/* Multi-layer vignette for depth */}
+      <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.8) 100%)',
+          background: `
+            radial-gradient(ellipse at 20% 50%, rgba(201, 149, 43, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(201, 149, 43, 0.03) 0%, transparent 40%),
+            linear-gradient(180deg, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.5) 50%, rgba(5,5,5,0.85) 100%)
+          `,
           pointerEvents: 'none',
         }}
       />
