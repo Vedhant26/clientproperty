@@ -18,7 +18,9 @@ import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import HowItWorksPage from './pages/HowItWorksPage';
+import CategoriesPage from './pages/CategoriesPage';
 import Chatbot from './components/Chatbot';
+import MobileBottomNav from './components/MobileBottomNav';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -147,6 +149,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/properties" element={<PropertiesPage />} />
             <Route path="/property/:id" element={<PropertyDetailsPage />} />
+            <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -156,6 +159,7 @@ function App() {
       </main>
 
       <Chatbot />
+      <MobileBottomNav />
       <Footer />
     </>
   );

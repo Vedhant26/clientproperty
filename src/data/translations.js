@@ -31,6 +31,7 @@ export const translations = {
 
     // Global
     'section.featured': 'Featured',
+    'section.explore': 'Explore',
     'section.our_properties': 'Our Properties',
     'section.what_we_offer': 'What We Offer',
     'section.our_services': 'Our Services',
@@ -62,6 +63,31 @@ export const translations = {
     'prop.whatsapp': 'WhatsApp',
     'prop.back': 'Back to Properties',
     'prop.verified': 'Verified Photo',
+
+    // Categories
+    'cat.title': 'Browse Categories',
+    'cat.subtitle': 'Find exactly what you\'re looking for',
+    'cat.properties': 'Properties',
+    'cat.sale_houses': 'For Sale: Houses & Apartments',
+    'cat.rent_houses': 'For Rent: Houses & Apartments',
+    'cat.new_projects': 'New Projects & Properties',
+    'cat.lands_plots': 'Lands & Plots',
+    'cat.rent_shops': 'For Rent: Shops & Offices',
+    'cat.sale_shops': 'For Sale: Shops & Offices',
+    'cat.pg_guest': 'PG & Guest Houses',
+    'cat.view_all': 'View All',
+    'cat.page_title': 'Categories',
+    'cat.coming_soon': 'Coming Soon',
+    'cat.listings': 'listings',
+
+    // Bottom Nav
+    'nav.bottom.home': 'Home',
+    'nav.bottom.categories': 'Categories',
+    'nav.bottom.sell': 'Sell',
+    'nav.bottom.contact': 'Contact',
+
+    // Search
+    'search.placeholder': 'Search properties, plots, houses...',
 
     // Post Property CTA
     'cta.want_to_sell': 'Want to Sell or Rent Your Property?',
@@ -168,6 +194,7 @@ export const translations = {
 
     // Global
     'section.featured': 'विशेष',
+    'section.explore': 'एक्सप्लोर',
     'section.our_properties': 'हमारी प्रॉपर्टीज़',
     'section.what_we_offer': 'हमारी पेशकश',
     'section.our_services': 'हमारी सेवाएं',
@@ -199,6 +226,31 @@ export const translations = {
     'prop.whatsapp': 'व्हाट्सएप (WhatsApp)',
     'prop.back': 'वापस प्रॉपर्टीज़ पर',
     'prop.verified': 'सत्यापित फोटो',
+
+    // Categories
+    'cat.title': 'कैटेगरी ब्राउज़ करें',
+    'cat.subtitle': 'जो चाहिए वो आसानी से खोजें',
+    'cat.properties': 'प्रॉपर्टीज़',
+    'cat.sale_houses': 'बिक्री: घर और अपार्टमेंट',
+    'cat.rent_houses': 'किराया: घर और अपार्टमेंट',
+    'cat.new_projects': 'नए प्रोजेक्ट्स और प्रॉपर्टीज़',
+    'cat.lands_plots': 'ज़मीन और प्लॉट',
+    'cat.rent_shops': 'किराया: दुकानें और ऑफिस',
+    'cat.sale_shops': 'बिक्री: दुकानें और ऑफिस',
+    'cat.pg_guest': 'पीजी और गेस्ट हाउस',
+    'cat.view_all': 'सभी देखें',
+    'cat.page_title': 'कैटेगरी',
+    'cat.coming_soon': 'जल्द आ रहा है',
+    'cat.listings': 'लिस्टिंग',
+
+    // Bottom Nav
+    'nav.bottom.home': 'होम',
+    'nav.bottom.categories': 'कैटेगरी',
+    'nav.bottom.sell': 'बेचें',
+    'nav.bottom.contact': 'संपर्क',
+
+    // Search
+    'search.placeholder': 'प्रॉपर्टी, प्लॉट, मकान खोजें...',
 
     // Post Property CTA
     'cta.want_to_sell': 'क्या आप अपनी प्रॉपर्टी बेचना या किराए पर देना चाहते हैं?',

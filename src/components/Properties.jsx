@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { properties } from '../data/properties';
@@ -42,11 +42,20 @@ const PropertyImageCarousel = ({ images, altText, type }) => {
 };
 
 const Properties = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [searchParams] = useSearchParams();
+  const urlCategory = searchParams.get('category');
+  const [activeFilter, setActiveFilter] = useState(urlCategory || 'all');
   const sectionRef = useRef(null);
   const gridRef = useRef(null);
   const navigate = useNavigate();
   const { t, language } = useTranslation();
+
+  // Sync filter with URL param when it changes
+  useEffect(() => {
+    if (urlCategory) {
+      setActiveFilter(urlCategory);
+    }
+  }, [urlCategory]);
 
   const filterOptions = [
     'all',
