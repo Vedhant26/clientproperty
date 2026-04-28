@@ -16,6 +16,23 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Save inquiry to localStorage for admin panel
+    try {
+      const existing = JSON.parse(localStorage.getItem('mahakal_inquiries') || '[]');
+      existing.unshift({
+        name: formData.name,
+        phone: formData.phone,
+        type: formData.type,
+        message: formData.message,
+        timestamp: new Date().toISOString(),
+        read: false,
+      });
+      localStorage.setItem('mahakal_inquiries', JSON.stringify(existing));
+    } catch (err) {
+      console.error('Failed to save inquiry:', err);
+    }
+
     const text = language === 'hi'
       ? `नमस्ते, मेरा नाम ${formData.name} है, नंबर: ${formData.phone}। मैं ${formData.type} के बारे में पूछताछ करना चाहता हूँ। संदेश: ${formData.message}`
       : `Hi, I am ${formData.name}, Contact: ${formData.phone}. Inquiry: ${formData.type}. Message: ${formData.message}`;

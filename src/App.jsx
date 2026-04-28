@@ -19,6 +19,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import CategoriesPage from './pages/CategoriesPage';
+import AdminPage from './pages/AdminPage';
 import Chatbot from './components/Chatbot';
 import MobileBottomNav from './components/MobileBottomNav';
 
@@ -108,11 +109,17 @@ function App() {
   }, []);
 
   const location = useLocation();
+  const isAdminRoute = location.pathname === '/admin';
 
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  // Admin route — bypass everything (loader, language, navbar, footer)
+  if (isAdminRoute) {
+    return <AdminPage />;
+  }
 
   if (loading) {
     return (
